@@ -2,10 +2,11 @@ import React, { useState,useEffect,useContext } from 'react'
 import { useNavigate } from "react-router-dom";
 import noteContext from '../context/noteContext'
 import smoke from './static/smoke.png';
-import tree from './static/rocket2.png';
-import photo1 from './static/treespl.jpg';
+import tree1 from './static/tree1.jpg';
+import hostel from './static/hostel.jpg';
+import photo1 from './static/outsidehostel.jpeg';
 import photo2 from './static/footballteam.jpg';
-import photo3 from './static/cultural.jpg';
+import photo3 from './static/tree1.jpg';
 import {Vmodalopen,Disableli,NODisableli} from './tsidebar'
 import PriceChangeRoundedIcon from '@mui/icons-material/PriceChangeRounded';
 import AccountBalanceWalletRoundedIcon from '@mui/icons-material/AccountBalanceWalletRounded';
@@ -109,7 +110,7 @@ for(let i=0;i<json.length;i++){
             'Content-Type':'application/json',
             'auth-token':localStorage.getItem('token')
         },
-        body: JSON.stringify({room:roomno})
+        body: JSON.stringify({room:sroom})
 
 
     });
@@ -161,22 +162,23 @@ for(let i=0;i<json.length;i++){
 <div className="max-w-full px-3 lg:w-1/2 lg:flex-none">
 <div className="flex flex-col h-full">
 <p className="pt-2 mb-1 font-semibold">Welcome to</p>
-<h5 className="font-bold">Mega Boys Hostels</h5>
+<h5 className="font-bold">DCRUST Boys Hostel</h5>
 <p className="mb-12">The hostel facility is available to the regular students who are on the rolls of the institute depending upon the availability.</p>
-<a className="mt-auto mb-0 font-semibold leading-normal text-sm group text-slate-500" target={'_blank'} href="https://www.nitj.ac.in/index.php/nitj_cinfo/index/23">
+{/* <a className="mt-auto mb-0 font-semibold leading-normal text-sm group text-slate-500" target={'_blank'} href="https://www.nitj.ac.in/index.php/nitj_cinfo/index/23">
 Read More
 <i className="fas fa-arrow-right ease-bounce text-sm group-hover:translate-x-1.25 ml-1 leading-normal transition-all duration-200" aria-hidden="true"></i>
-</a>
+</a> */}
 </div>
 </div>
-<div className="max-w-full px-3 mt-12 ml-auto text-center lg:mt-0 lg:w-5/12 lg:flex-none mbhh">
-<div className="h-full bg-gradient-to-tl from-purple-700 to-pink-500 rounded-xl">
-{/* <img src="../assets/img/shapes/waves-white.svg" className="absolute top-0 hidden w-1/2 h-full lg:block" /> */}
-<div className="relative flex items-center justify-center h-full">
-<img className="relative z-20 w-full pt-6" src={tree} />
+<div className="max-w-full px-0.5 mt-12 ml-auto text-center lg:mt-0 lg:w-5/12 lg:flex-none mbhh">
+  <div className="relative z-20 w-full pt-6 ">
+    {/* <img src="../assets/img/shapes/waves-white.svg" className="absolute top-0 hidden w-1/2 h-full lg:block" /> */}
+    <div className="relative flex items-center justify-center h-full">
+      <img className="relative z-20 w-full h-full object-cover rounded-xl" src={hostel} alt="Outside Hostel" />
+    </div>
+  </div>
 </div>
-</div>
-</div>
+
 </div>
 </div>
 </div>
@@ -197,24 +199,18 @@ Read More
   <div className="carousel-inner">
     <div className="carousel-item active">
       <img src={photo1} className="d-block w-100" alt="..."/>
-      <div className="carousel-caption d-none d-md-block">
+      {/* <div className="carousel-caption d-none d-md-block">
        
         <p>Plannted more than 100+ trees by students</p>
-      </div>
+      </div> */}
     </div>
     <div className="carousel-item">
       <img src={photo2} className="d-block w-100" alt="..."/>
-      <div className="carousel-caption d-none d-md-block">
-        {/* <h5>Second slide label</h5> */}
-        <p>Sports meet was held last week</p>
-      </div>
+    
     </div>
     <div className="carousel-item">
       <img src={photo3} className="d-block w-100" alt="..."/>
-      <div className="carousel-caption d-none d-md-block">
-        
-        <p>Republic day celebration</p>
-      </div>
+   
     </div>
   </div>
   <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -363,12 +359,12 @@ Read More
 <div className="relative h-full overflow-hidden bg-cover rounded-xl thisisbgcv">
 <span className="absolute top-0 left-0 w-full h-full bg-center bg-cover bg-gradient-to-tl from-gray-900 to-slate-800 opacity-80 "></span>
 <div className="relative z-10 flex flex-col flex-auto h-full p-4">
-<h5 className="pt-2 mb-6 font-bold text-white">Mega Boys Hostels</h5>
+<h5 className="pt-2 mb-6 font-bold text-white">DCRUST Boys Hostels</h5>
 <p className="txtw ">You have selected room number {sroom}</p>
 <div>
 <div className='d-flex rdetails'>
   <p className='stdd'>Name : <span className='hstdd'>{sname}</span></p>
-  <p className='stdd'>Hostel : <span className='hstdd'>MBHF</span></p>
+  <p className='stdd'>Hostel : <span className='hstdd'>DBHF</span></p>
 </div>
 <div className='d-flex rdetails'>
   <p className='stdd'>Room no : <span className='hstdd'>{sroom}</span></p>
@@ -424,7 +420,7 @@ Next
 
 </div>
 <h6 className="mt-6 mb-0 ml-2">Mess Details</h6>
-<p className="ml-2 leading-normal text-sm"><span className="font-bold">Active</span> from Jan 23,2023</p>
+<p className="ml-2 leading-normal text-sm"><span className="font-bold">Active</span> from Jan 1,2025</p>
 <div className="w-full px-6 mx-auto max-w-screen-2xl rounded-xl">
 <div className="flex flex-wrap mt-0 -mx-3 flex-star">
 <div className="flex-none w-1/4 max-w-full py-4 pl-0 pr-3 mt-0 koiv">

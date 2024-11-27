@@ -44,7 +44,6 @@ router.get('/allcomplains', fetchadmin,  async (req, res) => {
             res.status(500).json({ message:'server error',response:false})
         }
     }
-
   })
 router.get('/getallpasses', fetchadmin,  async (req, res) => {
   

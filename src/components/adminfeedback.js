@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import noteContext from '../context/noteContext'
+import './adminfeedback.css';
 
 
 const AdminFeedback = () => {
@@ -40,7 +41,41 @@ const AdminFeedback = () => {
     }
 
     return (
-        <div>Feedback</div>
+        <div className='body'>
+            <div className="admin-feedbacks-container">
+                <h2>User Feedbacks</h2>
+                {/* {error && <p className="error-message">{error}</p>}
+            {feedbacks.length === 0 && !error ? (
+                <p>No feedbacks available.</p>
+            ) : ( */}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Title</th>
+                            <th>Message</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {feedback.map((feedback, index) => (
+                            <tr key={feedback._id}>
+                                <td>{index + 1}</td>
+                                <td>{feedback.name}</td>
+                                <td>{feedback.email}</td>
+                                <td>{feedback.title || 'N/A'}</td>
+                                <td>{feedback.message}</td>
+                                <td>{new Date(feedback.date).toLocaleString()}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+                {/* )} */}
+            </div>
+        </div>
+
     )
 }
 

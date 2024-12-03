@@ -176,6 +176,7 @@
 
 import React, { useEffect, useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+// import axios from 'axios';
 import noteContext from '../context/noteContext';
 
 export const Signin = (props) => {
@@ -272,10 +273,24 @@ export const Signin = (props) => {
         }
     };
 
-    // Forgot Password Handler
+    //Forgot Password Handler
     const handleForgotPassword = () => {
         navigate('/forgot-password'); // Assumes you have a route for "/forgot-password"
     };
+    // const ForgotPassword = () => {
+    //     const [email, setEmail] = useState("");
+    //     const [message, setMessage] = useState("");
+
+    //     const handleSubmit = async (e) => {
+    //         console.log("hello")
+    //         e.preventDefault();
+    //         try {
+    //             const response = await axios.post("/api/auth/forgot-password", { email });
+    //             setMessage(response.data.message);
+    //         } catch (error) {
+    //             setMessage(error.response?.data?.message || "An error occurred. Please try again.");
+    //         }
+    //     };
 
     return (
         <div className="container signinbox">
@@ -371,6 +386,9 @@ export const Signin = (props) => {
                                         Sign up
                                     </Link>
                                 </p>
+                                <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                                    Login to admin <Link to="/adminsignin" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Click here</Link>
+                                </p>
                             </form>
                         </div>
                     </div>
@@ -378,4 +396,4 @@ export const Signin = (props) => {
             </section>
         </div>
     );
-};
+}

@@ -1,0 +1,156 @@
+.outer {
+    background-image: url('./static/lib-audi.jpg'); /* Ensure the path to your image is correct */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    height: 100vh; /* Sets the height to fill the entire viewport */
+    width: 82vw; /* Sets the width to fill the entire viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.background-container {
+    background-image: url('./static/hostel.jpg'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    height: 100vh; /* Sets the height to fill the entire viewport */
+    width: 82vw; /* Sets the width to fill the entire viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .background-container-attendance {
+    background-image: url('./static/Hostel-inside.jpg'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-color: #ccc;
+    height: 100vh; /* Sets the height to fill the entire viewport */
+    overflow-x: hidden;
+    min-width:82vw ;/* Sets the width to fill the entire viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .background-container-feedback {
+    background-image: url('./static/gate.jpg'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    height: 100vh; /* Sets the height to fill the entire viewport */
+    width: 82vw; /* Sets the width to fill the entire viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+  .attendence-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Center vertically and occupy full screen */
+    min-width: 100vw;
+    background-color: #070707; /* Light background for a clean look */
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.attendence-main h2 {
+    font-size: 2rem;
+    color: #0c0c0c;
+    margin-bottom: 20px;
+}
+
+.attendence-main label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    color: #0a0909;
+    margin-bottom: 15px;
+    width: 100%; /* Make labels stretch uniformly */
+    max-width: 300px; /* Limit maximum width */
+}
+
+.attendence-main input,
+select {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fff;
+    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+}
+
+.mark-attendence-button {
+    background-color: #040404;
+    color: rgb(10, 9, 9);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.mark-attend-button:hover {
+    
+    background-color: #00b321;
+}
+
+.mark-attend-button{
+    background-color: rgb(69, 69, 214);
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.attend-main{
+    background-color: #fff;
+    padding: 4rem;
+    border-radius: 20px ;
+}
+
+.attend-main ul {
+    margin-top: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.attend-main li {
+    background-color: #060606;
+    padding: 10px;
+    border: 1px solid #0b0b0b;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #333;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+  

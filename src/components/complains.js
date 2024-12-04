@@ -2,6 +2,7 @@ import React, { useState,useEffect,useContext } from 'react'
 import noteContext from '../context/noteContext'
 import { useNavigate } from "react-router-dom";
 import { Dismiss } from 'flowbite';
+// import './styles.css';
 let varia=1
 let rott=360
 export const Complains = () => {
@@ -261,7 +262,7 @@ const toastdismiss=()=>{
 
   return (
     <>
-  
+  <div className="background-container">
   <div className="one two fourth justify-content-center calcby">
  
      
@@ -481,7 +482,7 @@ const toastdismiss=()=>{
   </div>
 </div>
 
-
+</div>
 
      </>
   )

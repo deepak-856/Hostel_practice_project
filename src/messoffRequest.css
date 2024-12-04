@@ -1,0 +1,119 @@
+Center the content on the page
+.outer {
+    
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+
+.inner {
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px;
+
+}
+
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #555;
+}
+
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+
+.mess-request-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #439b46;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.mess-request-button:hover {
+    background-color: #205d23;
+}
+
+h3 {
+    text-align: center;
+    color: #333;
+    margin-top: 30px;
+}
+
+ul {
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+/* css for image in signin form */
+.outside-image-div {
+    position: absolute;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire area */
+    z-index: -1; /* Pushes the image behind other elements */
+    filter: brightness(50%) blur(2px); /* Adds an attractive dim effect */
+}
+
+.sigin-start {
+    background: rgba(255, 255, 255, 0.85); 
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20%;
+}

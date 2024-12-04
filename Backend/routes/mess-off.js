@@ -19,12 +19,12 @@
 
 //   const usera = await User.findById(req.user)
 //   const room = await Room.find({ user: req.user })
- 
+
 //   const lastgatetoken = await Token.find({ user: req.user }).sort({_id:-1}).limit(1);
 //   if(lastgatetoken.length>0){
 //     console.log(lastgatetoken[0].in_time)
 //     if(lastgatetoken[0].in_time){
-       
+
 //   try{
 //     console.log(req.body.Subject)
 //     const newtoken = new Token({
@@ -32,7 +32,7 @@
 //     })
 //     const newtoken_request = await newtoken.save()
 //     res.json({newtoken_request:newtoken_request,response:true})
-    
+
 
 //   }
 //   catch(error){
@@ -45,14 +45,14 @@
 //   }
 //   else
 //   {
-  
+
 //   try{
 //     const newtoken = new Token({
 //         user:req.user,name:usera.name,room_no:room[0].room_no, Subject:req.body.Subject, expected_in_time:req.body.It,
 //     })
 //     const newtoken_request = await newtoken.save()
 //     res.json({newtoken_request:newtoken_request,response:true})
-    
+
 
 //   }
 //   catch(error){
@@ -80,14 +80,14 @@
 //   try {
 //     //   const attenhist = await Token.find({ user: req.user })
 //       const attenhist = await Token.find({ user: req.user }).sort({_id:-1}).limit(1);
-      
+
 //       if(attenhist.length==0){
 //         return res.json({status:true,ot:true,it:true,reponse:true,last_data:0})
 //       }
 //       let gdate=attenhist[0].date.toString()
 //       let g1=gdate.slice(4,15)
 //       let g2=gdate.slice(16,21)
-      
+
 //       let last_data={name:attenhist[0].name,room_no:attenhist[0].room_no,token_no:attenhist[0]._id,g1:g1,g2:g2}
 //       if(attenhist.length){
 //         if(attenhist[0].out_time==null){
@@ -100,7 +100,7 @@
 //       }else{
 //           res.json({status:true,ot:true,it:true,reponse:true,last_data})
 //       }
-       
+
 //   } catch (error) {
 //     console.log(error)
 //       res.status(500).json({ errors:'server error',})
@@ -120,7 +120,7 @@
 //   }
 
 // try {
-   
+
 //   const gatetoken = await Token.find({_id:req.body.t_id});
 // if(gatetoken.length==0){
 //   res.json({message:"token not found",response:false})
@@ -138,16 +138,16 @@
 //         res.status(500).json({ errors:'server error'})
 //     }
 
-    
+
 //   }
 // }
 // } catch (error) {
 //   console.log(error)
 //         res.status(500).json({ errors:'server error'})
 // }
- 
 
- 
+
+
 
 // });
 
@@ -162,7 +162,7 @@
 //   }
 
 // try {
-   
+
 //   const gatetoken = await Token.find({_id:req.body.t_id});
 // if(gatetoken.length==0){
 //   res.json({message:"token not found",response:false})
@@ -181,17 +181,17 @@
 //   else{
 //     res.json({message:"First need out time",response:false})
 
-   
-    
+
+
 //   }
 // }
 // } catch (error) {
 //   console.log(error)
 //         res.status(500).json({ errors:'server error'})
 // }
- 
 
- 
+
+
 
 // });
 
@@ -199,3 +199,43 @@
 
 
 // module.exports=router
+
+
+
+const express = require("express");
+const router = express.Router();
+const MessOff = require("../models/MessOff");
+
+// Student applies for mess off
+router.post("/apply", async (req, res) => {
+  const { studentId, startDate, endDate, reason } = req.body;
+  const application = new MessOff({ studentId, startDate, endDate, reason, status: "Pending" });
+  await application.save();
+  res.json(application);
+});
+
+// Admin fetches pending requests
+router.get("/requests", async (req, res) => {
+  try {
+    const { status } = req.query;
+    const applications = await MessOff.find({ status: "Pending" }); // Ensure MessOff is defined and connected
+    res.json(applications);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
+// Admin updates request status
+router.put("/update/:id", async (req, res) => {
+  const { status } = req.body;
+  await MessOff.findByIdAndUpdate(req.params.id, { status: status });
+  res.json({ message: "Status updated" });
+});
+
+router.get("/my-requests" , async(req, res) =>{
+  
+})
+
+
+module.exports = router;

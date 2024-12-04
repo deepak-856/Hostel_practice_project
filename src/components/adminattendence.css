@@ -1,0 +1,78 @@
+.attendence-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Center vertically and occupy full screen */
+    min-width: 100vw;
+    background-color: #f9f9f9; /* Light background for a clean look */
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.attendence-main h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.attendence-main label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+    width: 100%; /* Make labels stretch uniformly */
+    max-width: 300px; /* Limit maximum width */
+}
+
+.attendence-main input,
+select {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fff;
+    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+}
+
+.mark-attendence-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.mark-attendence-button:hover {
+    background-color: #0056b3;
+}
+
+.attendence-main ul {
+    margin-top: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.attendence-main li {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #333;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}

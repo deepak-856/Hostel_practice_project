@@ -178,6 +178,8 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 // import axios from 'axios';
 import noteContext from '../context/noteContext';
+import pic1 from './static/lib-audi.jpg';
+
 
 export const Signin = (props) => {
     const { state, dispatch } = useContext(noteContext);
@@ -293,9 +295,11 @@ export const Signin = (props) => {
     //     };
 
     return (
-        <div className="container signinbox">
-            <section className="bg-gray-50 dark:bg-gray-900 siginsection">
-                <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 sectonexdiv">
+        <div className="container outside-image-div signinbox">
+             <img src={pic1} className="background-image" alt="..." />
+                
+            <section className="bg-gray-50 dark:bg-gray-900 signin-start siginsection">
+                <div className="flex flex-col items-center justify-center px-12 py-8 mx-auto md:h-screen lg:py-0 sectonexdiv">
                     <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
                         <img
                             className="w-8 h-8 mr-2"
@@ -304,7 +308,7 @@ export const Signin = (props) => {
                         />
                         DCRUST Boys Hostel
                     </a>
-                    <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                    <div className="w-full bg-white  rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                         <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
                             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                                 Sign in to your account
@@ -375,7 +379,7 @@ export const Signin = (props) => {
                                     </button>
                                 </div>
                                 <button
-                                    type="submit"
+                                    type="submit" id='sigin_submit'
                                     className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                                 >
                                     Sign in

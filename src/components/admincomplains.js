@@ -90,7 +90,8 @@ export const Admincomplains = () => {
 
 
   return (
-    <div>
+    <div className="background-container">
+    <div className="bg-white p-4 rounded-lg">
       <h1>Admin Complaint Dashboard</h1>
       <table border="1" style={{ width: "100%", textAlign: "left" }}>
         <thead>
@@ -116,6 +117,7 @@ export const Admincomplains = () => {
           ))}
         </tbody>
       </table>
+    </div>
     </div>
   );
 };

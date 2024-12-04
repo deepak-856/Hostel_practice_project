@@ -42,6 +42,7 @@ const AdminFeedback = () => {
 
     return (
         <div className='body'>
+                <div className="background-container-feedback">
             <div className="admin-feedbacks-container">
                 <h2>User Feedbacks</h2>
                 {/* {error && <p className="error-message">{error}</p>}
@@ -74,6 +75,7 @@ const AdminFeedback = () => {
                 </table>
                 {/* )} */}
             </div>
+        </div>
         </div>
 
     )

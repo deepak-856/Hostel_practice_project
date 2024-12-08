@@ -6,6 +6,7 @@ const nodemailer = require('nodemailer')
 const crypto = require("crypto");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const smsRoutes = require("./routes/smsRoutes");
 
 
 
@@ -90,6 +91,7 @@ app.use(express.json())
 
 
 
+app.use("/api", smsRoutes);
 
 app.use('/api/auth',require('./routes/auth'))
 // app.use('/api/g',require('./routes/gate_stoken'))

@@ -38,6 +38,7 @@ import AdminMessOffApproval from './components/AdminMessOffApproval';
 import AdminAttendance from './components/adminattendance';
 import StudentAttendance from './components/StudentAttendance';
 import AdminFeedback from './components/adminfeedback';
+import MessBillSender from "./components/MessBillSender"; // Adjust the path
 
 function App() {
   const [have, sethave] = useState(0)
@@ -108,6 +109,7 @@ function App() {
                 <Route exact path="/admincomplains" element={<Admincomplains />} />
                 <Route exact path="/adminfeedback" element={<AdminFeedback />} />
                 <Route exact path="/AdminMessOffApproval" element={<AdminMessOffApproval />} />
+                <Route path="/send-mess-bill" element={<MessBillSender />} />
               </Routes>
             </div>
           </div>

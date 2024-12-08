@@ -6,6 +6,9 @@ const UserSchema = new Schema({
     type:String,
     required:true
   },
+  rollno:{
+    type:Number,
+  },
   email:{
     type:String,
     required:true,

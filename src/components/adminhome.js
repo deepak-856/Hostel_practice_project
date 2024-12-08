@@ -50,6 +50,7 @@ export const Adminhome = () => {
                 let room_no = json.data[i].room_no
                 let sname = json.data[i].name
                 let semail = json.data[i].email
+                let phonno = json.data[i].mobile
                 let dessignal = true
 
 
@@ -62,13 +63,13 @@ export const Adminhome = () => {
                         {sname}
                     </td>
                     <td className="px-6 py-4">
-                        something
+                        {semail}
                     </td>
                     <td className="px-6 py-4">
                         else
                     </td>
                     <td className="px-6 py-4">
-                        Here
+                        {phonno}
                     </td>
 
                     <td className="px-6 py-4 ">
@@ -100,8 +101,8 @@ export const Adminhome = () => {
         const tempv = await getalldata();
     }
     return (
-        <>
-            <div className="upperw">
+        <div className='admin-dashboard'>
+            <div className="upperw ">
 
                 <div className="flex flex-wrap -mx-3" style={{ margin: "30px", width: "90%" }}>
 
@@ -198,7 +199,7 @@ export const Adminhome = () => {
                 <div className="one two fourth justify-content-center calcby">
 
 
-                    <div className='relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border h100 p-4'>
+                    <div className='relative flex flex-col min-w-0 break-words bg-gray-500 shadow-soft-xl rounded-2xl bg-clip-border h100 p-4'>
 
 
                         <div className="relative overflow-x-auto sm:rounded-lg" style={{ maxHeight: "400px" }}>
@@ -261,6 +262,6 @@ export const Adminhome = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }

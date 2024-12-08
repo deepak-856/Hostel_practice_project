@@ -635,6 +635,7 @@ const MessOffRequest = () => {
         endDate: "",
         reason: "",
     });
+    const [error, setError] = useState(""); // To display validation errors
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -642,9 +643,20 @@ const MessOffRequest = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const today = new Date().toISOString().split("T")[0]; // Current date in YYYY-MM-DD format
+        if (formData.startDate < today) {
+            setError("Start date cannot be earlier than today.");
+            return;
+        }
+
+        if (formData.endDate < formData.startDate) {
+            setError("End date cannot be earlier than the start date.");
+            return;
+        }
+
         try {
             const res = await axios.post("http://localhost:5000/api/mess-off/apply", formData);
-            alert("Mess off application submitted!");
+            alert("Leave Pass application submitted!");
             setApplications([...applications, res.data]);
         } catch (err) {
             console.error(err);
@@ -653,10 +665,20 @@ const MessOffRequest = () => {
     };
 
     const fetchApplications = async () => {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            alert("You must be logged in to view your requests.");
+            return;
+        }
         try {
-            const res = await axios.get("http://localhost:5000/api/mess-off/my-requests");
+            const res = await axios.get("http://localhost:5000/api/mess-off/my-requests", {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'auth-token': token,
+                },
+            });
             setApplications(res.data);
-            console.log("fetch",res.data)
+            console.log("fetch", res.data)
         } catch (err) {
             console.error(err);
         }
@@ -674,28 +696,65 @@ const MessOffRequest = () => {
                 <form onSubmit={handleSubmit}>
                     <label>
                         Start Date:
-                        <input type="date" name="startDate" onChange={handleChange} required />
+                        <input type="date"
+                            name="startDate"
+                            value={formData.startDate}
+                            onChange={handleChange}
+                            required />
                     </label>
                     <label>
                         End Date:
-                        <input type="date" name="endDate" onChange={handleChange} required />
+                        <input type="date"
+                            name="endDate"
+                            value={formData.endDate}
+                            onChange={handleChange}
+                            required />
                     </label>
                     <label>
                         Reason:
-                        <textarea name="reason" onChange={handleChange} required />
+                        <textarea name="reason"
+                            value={formData.reason}
+                            onChange={handleChange}
+                            required />
                     </label>
+                    {error && <p style={{ color: "red" }}>{error}</p>}
                     <button className="mess-request-button" type="submit">Submit</button>
                 </form>
 
+
+            </div>
+            <div className="mess-request-display">
                 <h3>Your Applications</h3>
-                <ul>
+                {/* <ul>
                     {applications.map((app) => (
                         <li key={app.id}>
                             {app.startDate} to {app.endDate}: {app.status}
                         </li>
                     ))}
-                </ul>
-            </div>    
+                </ul> */}
+                {applications.length === 0 ? (
+                    <p>No requests found.</p>
+                ) : (
+                    <ul>
+                        {[...applications].reverse().map((app) => (
+                            // <li key={app._id}>
+                            //     {app.startDate} to {app.endDate}: {app.status}
+                            // </li>
+                            <li key={app._id} style={{ marginBottom: "10px" }}>
+                                {app.startDate} to {app.endDate}:{" "}
+                                <span
+                                    style={{
+                                        color: app.status === "Approved" ? "green" : app.status === "Rejected" ? "red" : "black",
+                                        fontWeight: "bold",
+                                    }}
+                                >
+                                    {app.status}
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            </div>
         </div>
     );
 };

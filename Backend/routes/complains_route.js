@@ -11,6 +11,7 @@ const { request } = require("express");
 router.post("/newcomplain", fetchuser, [
     body("catagory", "catagory is required").exists(),
     body("description", "Description is required").exists(),
+    body("mobile", "Mobile No is required").exists(),
   
   ],fetchuser,async (req,res)=>{
     const errors = validationResult(req);
@@ -23,12 +24,11 @@ router.post("/newcomplain", fetchuser, [
    
     try{
         const newcomplain = new Complain({
-            user:req.user,name:usera.name,room_no:room[0].room_no,catagory:req.body.catagory,description:req.body.description
+            user:req.user,name:usera.name,room_no:room[0].room_no,catagory:req.body.catagory,description:req.body.description,mobile:req.body.mobile
         })
         const new_complain = await newcomplain.save()
         res.json({new_complain:new_complain,response:true})
         
-    
       }
       catch(error){
         console.log(error)

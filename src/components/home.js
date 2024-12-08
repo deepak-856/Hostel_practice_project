@@ -162,7 +162,7 @@ export const Home = () => {
                   <div className="max-w-full px-3 lg:w-1/2 lg:flex-none">
                     <div className="flex flex-col h-full">
                       <p className="pt-2 mb-1 font-semibold">Welcome to</p>
-                      <h5 className="font-bold">DCRUST Boys Hostel</h5>
+                      <h5 className="font-bold">Hostelify</h5>
                       <p className="mb-12">The hostel facility is available to the regular students who are on the rolls of the institute depending upon the availability.</p>
                       {/* <a className="mt-auto mb-0 font-semibold leading-normal text-sm group text-slate-500" target={'_blank'} href="https://www.nitj.ac.in/index.php/nitj_cinfo/index/23">
 Read More

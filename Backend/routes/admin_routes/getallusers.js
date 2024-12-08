@@ -19,7 +19,7 @@ router.get('/getallusers', fetchadmin,  async (req, res) => {
         for(let i=0;i<rooms.length;i++){
             let admin = await User.findById(rooms[i].user)
          
-            data.push({room_no:rooms[i].room_no,name:rooms[i].name,email:admin.email})
+            data.push({room_no:rooms[i].room_no,name:rooms[i].name,email:admin.email, mobile:admin.mobile})
         }
         
         

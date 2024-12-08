@@ -99,9 +99,10 @@ export const Admincomplains = () => {
             <th>Name</th>
             <th>Room Number</th>
             <th>Category</th>
-            <th>Status</th>
             <th>Description</th>
             <th>Date</th>
+            <th>Status</th>
+            <th>Mobile No</th>
           </tr>
         </thead>
         <tbody>
@@ -110,9 +111,10 @@ export const Admincomplains = () => {
               <td>{complaint.name}</td>
               <td>{complaint.room_no}</td>
               <td>{complaint.catagory}</td>
-              <td>{complaint.status}</td>
               <td>{complaint.description}</td>
               <td>{new Date(complaint.date).toLocaleDateString()}</td>
+              <td>{complaint.status}</td>
+              <td>{complaint.mobile}</td>
             </tr>
           ))}
         </tbody>

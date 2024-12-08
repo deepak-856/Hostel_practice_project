@@ -11,6 +11,7 @@ const fetchuser = require('../middleware/fetchuser')
 //Route : 1 create a user using : post  '/api/auth/createuser' does not require auth
 router.post('/createuser',[
     body('name', 'Enter a valid name').isLength({ min: 3 }),
+    body('rollno', 'Enter valid Roll number').isLength({ min: 11, max: 11 }),
     body('email', 'Enter a valid email').isEmail(),
     body('mobile', 'Enter valid Mobile number').isLength({ min: 10 }),
     body('password', 'Password must be atleast 5 characters').isLength({ min: 5 })
@@ -30,10 +31,12 @@ router.post('/createuser',[
     console.log(req.body.mobile)
     const user = await User.create({
             name: req.body.name,
+            rollno: req.body.rollno,
             password: scpass,
             email: req.body.email,
             mobile: req.body.mobile,
           })
+        
     const data ={
             id:user.id
     }

@@ -204,7 +204,11 @@
 
 const express = require("express");
 const router = express.Router();
+const User = require('../models/user');
 const MessOff = require("../models/MessOff");
+const fetchuser = require("../middleware/fetchuser");
+const { validationResult } = require("express-validator");
+
 
 // Student applies for mess off
 router.post("/apply", async (req, res) => {
@@ -233,9 +237,44 @@ router.put("/update/:id", async (req, res) => {
   res.json({ message: "Status updated" });
 });
 
-router.get("/my-requests" , async(req, res) =>{
-  
-})
+// router.get("/my-requests", async (req, res) => {
+//   try {
+//       // const { studentId, startDate, endDate, reason } = req.body;
+//       console.log("heheh")
+//       const applications = await Application.find({ userId: req.user.id }); // Example logic
+//       console.log("Fetched applications:", applications); // Debugging
+//       res.json(applications);
+//   } catch (error) {
+//       console.error("Error fetching applications:", error);
+//       res.status(500).send("Server Error");
+//   }
+// });
+
+
+router.get("/my-requests", fetchuser, async (req, res) => {
+  // console.log("heheh")
+  // const errors = validationResult(req);
+  // if (!errors.isEmpty()) {
+  //   return res.status(400).json({ message: errors.array()[0].msg, response: false });
+  // }
+
+  // const usera = await User.findById(req.user)
+  // console.log(usera)
+
+
+  try {
+    // const { status } = req.query;
+    const applications = await MessOff.find({ userId: req.user._id });// Ensure MessOff is defined and connected
+      if (applications.length === 0) {
+        return res.status(404).json({ message: "No requests found" });
+    }
+    res.json(applications);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
 
 
 module.exports = router;

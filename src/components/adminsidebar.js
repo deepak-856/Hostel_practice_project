@@ -157,7 +157,19 @@ export const Adminsidebar = () => {
             {/* <li>
               <Link to="/about">about</Link>
             </li> */}
-
+            <li className="mt-0.5 w-full" id="feedbackli">
+              <Link onClick={() => setact(3)}
+                className={`py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 font-semibold text-slate-700 transition-colors ${isact === 3 && "shadow-soft-xl rounded-lg bg-white"}`}
+                to="/send-mess-bill"
+              >
+                <div className={`shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5  ${isact === 3 && "bluegrad"}`}>
+                  <CalendarMonthIcon className={`${isact === 3 ? 'whitess' : 'blackss'}`} />
+                </div>
+                <span className="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">
+                  Mess Bill
+                </span>
+              </Link>
+            </li>
           </ul>
           <div className="ps__rail-x" style={{ "fontWeight": "750", "left": "0px", "bottom": "0px" }}>
             {/* <div className="ps__rail-x" style="left: 0px; bottom: 0px;"> */}

@@ -7,6 +7,7 @@ const fetchadmin = async(req, res, next) => {
     // const token = req.cookies.tid;
     // console.log(token)
     const token = req.header('auth-token');
+
     if (!token) {
        return res.status(401).json({ error: "Please login",response:false })
     }

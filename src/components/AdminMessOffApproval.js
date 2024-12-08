@@ -479,7 +479,7 @@ const AdminMessOffApproval = () => {
       <ul>
         {applications.map((app) => (
           <li key={app._id}>
-            {app.studentId} applied for {app.startDate} to {app.endDate}
+           <strong>{app.name}</strong> {app.studentId} applied for {app.startDate} to {app.endDate}
             <button className="mess-request-button" onClick={() => handleApproval(app._id, "Approved")}>
               Approve
             </button>

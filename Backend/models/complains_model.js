@@ -29,6 +29,9 @@ const ComplainSchema = new Schema({
     type: String,
     
   },
+  mobile:{
+    type: Number,
+  },
 
   date: {
     type: Date,

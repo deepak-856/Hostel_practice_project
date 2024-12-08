@@ -8,16 +8,92 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .inner {
     background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
     padding: 20px;
+    padding-top: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     max-width: 400px;
+    max-height: 500px;
     width: 100%;
+    margin: 30px;
 }
+
+.mess-request-display {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 430px;
+    width: 100%;
+    margin: 30px auto; /* Centers the display section */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    max-height: 500px; /* Set a max height to limit the height of the container */
+    overflow-y: auto; /* Enables vertical scrolling if the content exceeds the max height */
+}
+.complain-display{
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    max-height: 500px; /* Set a max height to limit the height of the container */
+    overflow-y: auto; 
+}
+
+.mess-request-display h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+.mess-request-display ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mess-request-display li {
+    background-color: #f4f4f4;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mess-request-display li span {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.mess-request-display li:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
+
+.mess-request-display p {
+    font-size: 1rem;
+    color: #888;
+    margin-top: 20px;
+}
+
+
+/* .mess-request-display{
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px;  
+} */
 
 .background-container {
     background-image: url('./static/hostel.jpg'); /* Replace with your image path */
@@ -153,4 +229,109 @@ select {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.main-form {
+    width: 100%; /* Full width for smaller screens */
+    max-width: 1000px; /* Increased max width for larger screens */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px; /* Add padding for better spacing */
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    transition: all 0.3s ease; /* Smooth transitions for hover effects */
+}
+.main-form form{
+    margin: 0;
+    width: 400px;
+}
+.admin-dashboard{
+    background-image: url('./static/dcrust-fest.jpg'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    height: 100vh; /* Sets the height to fill the entire viewport */
+    width: 82vw; /* Sets the width to fill the entire viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center-container {
+    background-image: url('./static/auditorium.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    background-color: #f5f5f5; /* Light background for contrast */
+    overflow-y: auto;
+    max-width: 82vw;
+  }
+  
+  .mess-bill-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mess-bill-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333; /* Dark gray */
+    text-align: center;
+  }
+  
+  .mess-bill-input-group {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .mess-bill-input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #555; /* Slightly lighter gray */
+  }
+  
+  .mess-bill-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mess-bill-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff; /* Blue button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .mess-bill-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .mess-bill-response {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #28a745; /* Green for success messages */
+    text-align: center;
+  }
   

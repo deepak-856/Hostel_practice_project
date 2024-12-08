@@ -2,6 +2,7 @@ var jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const Room = require("../models/room");
 const JWT_SECRET = 'Harryisagoodb$oy';
+
 const fetchuser = async(req, res, next) => {
     const token2 = req.cookies.access_token;
     console.log(token2)
